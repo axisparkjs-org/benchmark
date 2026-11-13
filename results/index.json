@@ -1,11 +1,12 @@
 {
   "schema": 1,
-  "updatedAt": "2026-11-13T15-09-01Z",
+  "updatedAt": "2026-11-13T15-24-04Z",
   "releases": [
     "1.5.1",
     "1.5.0",
     "1.4.0",
     "1.3.1",
+    "1.3.0",
     "1.0.0"
   ],
   "environments": [
@@ -52,6 +53,15 @@
       "runId": "2026-11-13T15-09-01Z",
       "file": "1.3.1/node-24.json",
       "tasks": 107
+    },
+    {
+      "version": "1.3.0",
+      "node": 24,
+      "fingerprint": "gh-ubuntu-24.04-4cpu",
+      "kind": "backfill",
+      "runId": "2026-11-13T15-24-04Z",
+      "file": "1.3.0/node-24.json",
+      "tasks": 103
     },
     {
       "version": "1.0.0",
