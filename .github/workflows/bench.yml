@@ -142,7 +142,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.WEBSITE_REPO_TOKEN }}
         run: |
-          gh api repos/axisparkjs-org/website/dispatches \ 
+          gh api repos/axisparkjs-org/website/dispatches \
             --method POST \
             -f event_type=benchmarks-updated \
             -f "client_payload[version]=$VERSION"
