@@ -1,0 +1,2495 @@
+{
+  "schema": 1,
+  "axispark": {
+    "version": "1.3.1",
+    "tag": "v1.3.1",
+    "sha": null
+  },
+  "run": {
+    "id": "2026-11-13T15-09-01Z",
+    "benchSha": "738cfc79f4c6ec961c512030f2bbaca7db4c3502",
+    "kind": "backfill",
+    "configVersion": 1,
+    "repetitions": 3
+  },
+  "env": {
+    "fingerprint": "gh-ubuntu-24.04-4cpu",
+    "node": "24.22.2",
+    "v8": "13.6.233.17-node.63",
+    "os": "linux 7.0.0-1017-azure",
+    "cpu": "AMD EPYC 7763 64-Core Processor",
+    "cores": 4,
+    "memoryGb": 16,
+    "tinybench": "6.2.3",
+    "lockfileHash": "f6a98e825ed9cfa7d2161d120e0e5b3852aa964800dcd4f94c4cd54f3aed10e9"
+  },
+  "tasks": [
+    {
+      "id": "@axisparkjs/cli/cli.create@v1/help",
+      "package": "@axisparkjs/cli",
+      "suite": "cli.create",
+      "task": "help",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 147025859.156,
+        "p50": 136514224,
+        "p75": 149154830.75,
+        "p99": 222507461.17,
+        "mad": 3357178.5,
+        "rme": 3.931
+      },
+      "throughputOps": {
+        "mean": 6.924,
+        "p50": 7.325
+      },
+      "samples": 64,
+      "baselineRatio": 4.581,
+      "baseline": "raw-node",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/cli/cli.create@v1/create-default",
+      "package": "@axisparkjs/cli",
+      "suite": "cli.create",
+      "task": "create-default",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 161704729.234,
+        "p50": 147332979,
+        "p75": 168084426,
+        "p99": 240816653.12,
+        "mad": 6214414,
+        "rme": 4.308
+      },
+      "throughputOps": {
+        "mean": 6.338,
+        "p50": 6.788
+      },
+      "samples": 64,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/cli/cli.create@v1/raw-node",
+      "package": "@axisparkjs/cli",
+      "suite": "cli.create",
+      "task": "raw-node",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 31218621.469,
+        "p50": 29599856.5,
+        "p75": 32495339.5,
+        "p99": 43064734.57,
+        "mad": 2105471.5,
+        "rme": 3.541
+      },
+      "throughputOps": {
+        "mean": 32.746,
+        "p50": 33.784
+      },
+      "samples": 64,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/common/common.metadata@v1/get-class",
+      "package": "@axisparkjs/common",
+      "suite": "common.metadata",
+      "task": "get-class",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 198.479,
+        "p50": 151,
+        "p75": 171,
+        "p99": 330,
+        "mad": 9,
+        "rme": 3.096
+      },
+      "throughputOps": {
+        "mean": 5504753.07,
+        "p50": 6622516.556
+      },
+      "samples": 5038325,
+      "baselineRatio": 1.1615,
+      "baseline": "raw-get-class",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/common/common.metadata@v1/get-instance",
+      "package": "@axisparkjs/common",
+      "suite": "common.metadata",
+      "task": "get-instance",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 157.792,
+        "p50": 150,
+        "p75": 151,
+        "p99": 280,
+        "mad": 1,
+        "rme": 0.127
+      },
+      "throughputOps": {
+        "mean": 6600414.686,
+        "p50": 6666666.667
+      },
+      "samples": 6337439,
+      "baselineRatio": 1.0846,
+      "baseline": "raw-get-class",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/common/common.metadata@v1/get-method",
+      "package": "@axisparkjs/common",
+      "suite": "common.metadata",
+      "task": "get-method",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 181.587,
+        "p50": 150,
+        "p75": 160,
+        "p99": 301,
+        "mad": 1,
+        "rme": 2.373
+      },
+      "throughputOps": {
+        "mean": 6039731.315,
+        "p50": 6666666.667
+      },
+      "samples": 5507009,
+      "baselineRatio": 1.25,
+      "baseline": "raw-get-method",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/common/common.metadata@v1/has",
+      "package": "@axisparkjs/common",
+      "suite": "common.metadata",
+      "task": "has",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 112.359,
+        "p50": 101,
+        "p75": 110,
+        "p99": 181,
+        "mad": 1,
+        "rme": 3.942
+      },
+      "throughputOps": {
+        "mean": 9420156.966,
+        "p50": 9900990.099
+      },
+      "samples": 8900079,
+      "baselineRatio": 1.2333,
+      "baseline": "raw-has",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/common/common.metadata@v1/define",
+      "package": "@axisparkjs/common",
+      "suite": "common.metadata",
+      "task": "define",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 110.022,
+        "p50": 100,
+        "p75": 101,
+        "p99": 191,
+        "mad": 2,
+        "rme": 0.151
+      },
+      "throughputOps": {
+        "mean": 9583338.039,
+        "p50": 10000000
+      },
+      "samples": 9089062,
+      "baselineRatio": 1.25,
+      "baseline": "raw-define",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/common/common.metadata@v1/raw-get-class",
+      "package": "@axisparkjs/common",
+      "suite": "common.metadata",
+      "task": "raw-get-class",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 161.916,
+        "p50": 131,
+        "p75": 141,
+        "p99": 271,
+        "mad": 1,
+        "rme": 0.336
+      },
+      "throughputOps": {
+        "mean": 6746016.925,
+        "p50": 7633587.786
+      },
+      "samples": 6176033,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/common/common.metadata@v1/raw-get-method",
+      "package": "@axisparkjs/common",
+      "suite": "common.metadata",
+      "task": "raw-get-method",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 130.696,
+        "p50": 120,
+        "p75": 121,
+        "p99": 221,
+        "mad": 0,
+        "rme": 0.323
+      },
+      "throughputOps": {
+        "mean": 8054208.377,
+        "p50": 8333333.333
+      },
+      "samples": 7651355,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/common/common.metadata@v1/raw-has",
+      "package": "@axisparkjs/common",
+      "suite": "common.metadata",
+      "task": "raw-has",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 94.205,
+        "p50": 90,
+        "p75": 91,
+        "p99": 150,
+        "mad": 0,
+        "rme": 0.45
+      },
+      "throughputOps": {
+        "mean": 10896345.68,
+        "p50": 11111111.111
+      },
+      "samples": 10615136,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/common/common.metadata@v1/raw-define",
+      "package": "@axisparkjs/common",
+      "suite": "common.metadata",
+      "task": "raw-define",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 85.033,
+        "p50": 80,
+        "p75": 80,
+        "p99": 141,
+        "mad": 9,
+        "rme": 0.276
+      },
+      "throughputOps": {
+        "mean": 12442898.494,
+        "p50": 12500000
+      },
+      "samples": 11760119,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/core/core.plugins@v1/register-order-10",
+      "package": "@axisparkjs/core",
+      "suite": "core.plugins",
+      "task": "register-order-10",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 126015.606,
+        "p50": 98925,
+        "p75": 111100.5,
+        "p99": 241657.5,
+        "mad": 7544,
+        "rme": 6.109
+      },
+      "throughputOps": {
+        "mean": 9502.929,
+        "p50": 10108.668
+      },
+      "samples": 7936,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/core/core.plugins@v1/register-order-100",
+      "package": "@axisparkjs/core",
+      "suite": "core.plugins",
+      "task": "register-order-100",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 1113107.488,
+        "p50": 850462,
+        "p75": 972314.5,
+        "p99": 8525635.48,
+        "mad": 37030,
+        "rme": 6.503
+      },
+      "throughputOps": {
+        "mean": 1066.652,
+        "p50": 1175.831
+      },
+      "samples": 900,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/core/core.plugins@v1/use-100",
+      "package": "@axisparkjs/core",
+      "suite": "core.plugins",
+      "task": "use-100",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 23262.643,
+        "p50": 18816,
+        "p75": 28799,
+        "p99": 49438.2,
+        "mad": 341,
+        "rme": 0.922
+      },
+      "throughputOps": {
+        "mean": 46809.854,
+        "p50": 53146.259
+      },
+      "samples": 42988,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/data/data.mongodb@v1/insert",
+      "package": "@axisparkjs/data",
+      "suite": "data.mongodb",
+      "task": "insert",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 477807.786,
+        "p50": 464239,
+        "p75": 488083,
+        "p99": 767195.84,
+        "mad": 23434,
+        "rme": 0.892
+      },
+      "throughputOps": {
+        "mean": 2130.699,
+        "p50": 2154.063
+      },
+      "samples": 2093,
+      "baselineRatio": 1.049,
+      "baseline": "raw-insert",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/data/data.mongodb@v1/find-one-by-code",
+      "package": "@axisparkjs/data",
+      "suite": "data.mongodb",
+      "task": "find-one-by-code",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 513885.346,
+        "p50": 489209.5,
+        "p75": 517755.5,
+        "p99": 969156.4,
+        "mad": 27751.5,
+        "rme": 1.863
+      },
+      "throughputOps": {
+        "mean": 2019.138,
+        "p50": 2044.114
+      },
+      "samples": 1946,
+      "baselineRatio": 1.1168,
+      "baseline": "raw-find-one-by-code",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/data/data.mongodb@v1/raw-insert",
+      "package": "@axisparkjs/data",
+      "suite": "data.mongodb",
+      "task": "raw-insert",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 458773.512,
+        "p50": 442828,
+        "p75": 470410,
+        "p99": 691827.11,
+        "mad": 23398.5,
+        "rme": 0.775
+      },
+      "throughputOps": {
+        "mean": 2220.291,
+        "p50": 2258.213
+      },
+      "samples": 2180,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/data/data.mongodb@v1/raw-find-one-by-code",
+      "package": "@axisparkjs/data",
+      "suite": "data.mongodb",
+      "task": "raw-find-one-by-code",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 456809.806,
+        "p50": 438505.5,
+        "p75": 464862.5,
+        "p99": 601064.59,
+        "mad": 22261.5,
+        "rme": 1.942
+      },
+      "throughputOps": {
+        "mean": 2252.567,
+        "p50": 2280.473
+      },
+      "samples": 2190,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/data/data.mysql@v1/insert",
+      "package": "@axisparkjs/data",
+      "suite": "data.mysql",
+      "task": "insert",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 1592715.068,
+        "p50": 1457352.5,
+        "p75": 1625217.75,
+        "p99": 4572329.27,
+        "mad": 120304,
+        "rme": 2.831
+      },
+      "throughputOps": {
+        "mean": 660.39,
+        "p50": 686.176
+      },
+      "samples": 628,
+      "baselineRatio": 1.0677,
+      "baseline": "raw-insert",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/data/data.mysql@v1/find-one-by-code",
+      "package": "@axisparkjs/data",
+      "suite": "data.mysql",
+      "task": "find-one-by-code",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 403406.667,
+        "p50": 384510,
+        "p75": 431908,
+        "p99": 770543.49,
+        "mad": 36048,
+        "rme": 1.034
+      },
+      "throughputOps": {
+        "mean": 2555.477,
+        "p50": 2600.713
+      },
+      "samples": 2479,
+      "baselineRatio": 1.147,
+      "baseline": "raw-find-one-by-code",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/data/data.mysql@v1/raw-insert",
+      "package": "@axisparkjs/data",
+      "suite": "data.mysql",
+      "task": "raw-insert",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 1528223.058,
+        "p50": 1364884,
+        "p75": 1526226,
+        "p99": 4998059,
+        "mad": 112982,
+        "rme": 4.598
+      },
+      "throughputOps": {
+        "mean": 708.816,
+        "p50": 732.663
+      },
+      "samples": 655,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/data/data.mysql@v1/raw-find-one-by-code",
+      "package": "@axisparkjs/data",
+      "suite": "data.mysql",
+      "task": "raw-find-one-by-code",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 349680.624,
+        "p50": 335217.5,
+        "p75": 358931.75,
+        "p99": 575361.87,
+        "mad": 22341.5,
+        "rme": 1.131
+      },
+      "throughputOps": {
+        "mean": 2939.793,
+        "p50": 2983.138
+      },
+      "samples": 2860,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/data/data.postgres@v1/insert",
+      "package": "@axisparkjs/data",
+      "suite": "data.postgres",
+      "task": "insert",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 1040871.087,
+        "p50": 974563,
+        "p75": 1069231,
+        "p99": 3227300.82,
+        "mad": 84989,
+        "rme": 2.857
+      },
+      "throughputOps": {
+        "mean": 1010.13,
+        "p50": 1026.101
+      },
+      "samples": 961,
+      "baselineRatio": 1.0872,
+      "baseline": "raw-insert",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/data/data.postgres@v1/find-one-by-code",
+      "package": "@axisparkjs/data",
+      "suite": "data.postgres",
+      "task": "find-one-by-code",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 520823.714,
+        "p50": 472624,
+        "p75": 519191,
+        "p99": 1713880.4,
+        "mad": 39494,
+        "rme": 2.266
+      },
+      "throughputOps": {
+        "mean": 2062.007,
+        "p50": 2115.847
+      },
+      "samples": 1921,
+      "baselineRatio": 1.2444,
+      "baseline": "raw-find-one-by-code",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/data/data.postgres@v1/raw-insert",
+      "package": "@axisparkjs/data",
+      "suite": "data.postgres",
+      "task": "raw-insert",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 960036.624,
+        "p50": 896422,
+        "p75": 964507.5,
+        "p99": 2939981.73,
+        "mad": 60809,
+        "rme": 2.009
+      },
+      "throughputOps": {
+        "mean": 1089.968,
+        "p50": 1115.546
+      },
+      "samples": 1042,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/data/data.postgres@v1/raw-find-one-by-code",
+      "package": "@axisparkjs/data",
+      "suite": "data.postgres",
+      "task": "raw-find-one-by-code",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 418817.633,
+        "p50": 388547,
+        "p75": 418208,
+        "p99": 1103580.51,
+        "mad": 24000,
+        "rme": 1.484
+      },
+      "throughputOps": {
+        "mean": 2494.39,
+        "p50": 2573.691
+      },
+      "samples": 2388,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/ddd/ddd.domain@v1/value-object",
+      "package": "@axisparkjs/ddd",
+      "suite": "ddd.domain",
+      "task": "value-object",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 59.878,
+        "p50": 50,
+        "p75": 51,
+        "p99": 91,
+        "mad": 1,
+        "rme": 5.764
+      },
+      "throughputOps": {
+        "mean": 19829835.69,
+        "p50": 20000000
+      },
+      "samples": 16700744,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/ddd/ddd.domain@v1/value-equals",
+      "package": "@axisparkjs/ddd",
+      "suite": "ddd.domain",
+      "task": "value-equals",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 253.642,
+        "p50": 230,
+        "p75": 240,
+        "p99": 451,
+        "mad": 1,
+        "rme": 0.134
+      },
+      "throughputOps": {
+        "mean": 4147324.427,
+        "p50": 4347826.087
+      },
+      "samples": 3942560,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/ddd/ddd.domain@v1/aggregate-with-event",
+      "package": "@axisparkjs/ddd",
+      "suite": "ddd.domain",
+      "task": "aggregate-with-event",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 294.416,
+        "p50": 231,
+        "p75": 271,
+        "p99": 601,
+        "mad": 10,
+        "rme": 0.339
+      },
+      "throughputOps": {
+        "mean": 3926980.513,
+        "p50": 4329004.329
+      },
+      "samples": 3396552,
+      "baselineRatio": 1.5786,
+      "baseline": "raw-object",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/ddd/ddd.domain@v1/raw-object",
+      "package": "@axisparkjs/ddd",
+      "suite": "ddd.domain",
+      "task": "raw-object",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 156.358,
+        "p50": 140,
+        "p75": 141,
+        "p99": 270,
+        "mad": 9,
+        "rme": 0.171
+      },
+      "throughputOps": {
+        "mean": 6778713.174,
+        "p50": 7142857.143
+      },
+      "samples": 6395597,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/di/di.register@v1/providers-1000",
+      "package": "@axisparkjs/di",
+      "suite": "di.register",
+      "task": "providers-1000",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 226060.272,
+        "p50": 218288,
+        "p75": 228808,
+        "p99": 371385.17,
+        "mad": 1974,
+        "rme": 0.729
+      },
+      "throughputOps": {
+        "mean": 4457.079,
+        "p50": 4581.104
+      },
+      "samples": 4424,
+      "baselineRatio": 4.6758,
+      "baseline": "raw-map",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/di/di.register@v1/raw-map",
+      "package": "@axisparkjs/di",
+      "suite": "di.register",
+      "task": "raw-map",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 54903.37,
+        "p50": 47509,
+        "p75": 51065.5,
+        "p99": 136865,
+        "mad": 912,
+        "rme": 0.59
+      },
+      "throughputOps": {
+        "mean": 19524.354,
+        "p50": 21048.643
+      },
+      "samples": 18215,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/di/di.resolve@v1/singleton",
+      "package": "@axisparkjs/di",
+      "suite": "di.resolve",
+      "task": "singleton",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 1579.585,
+        "p50": 1192,
+        "p75": 1272,
+        "p99": 3366,
+        "mad": 50,
+        "rme": 5.359
+      },
+      "throughputOps": {
+        "mean": 784758.965,
+        "p50": 838926.174
+      },
+      "samples": 633078,
+      "baselineRatio": 29.8,
+      "baseline": "raw-new",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/di/di.resolve@v1/transient-depth-5",
+      "package": "@axisparkjs/di",
+      "suite": "di.resolve",
+      "task": "transient-depth-5",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 29072.556,
+        "p50": 23103,
+        "p75": 23805,
+        "p99": 57911.7,
+        "mad": 461,
+        "rme": 6.368
+      },
+      "throughputOps": {
+        "mean": 41502.836,
+        "p50": 43284.422
+      },
+      "samples": 34397,
+      "baselineRatio": 577.575,
+      "baseline": "raw-new",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/di/di.resolve@v1/scoped",
+      "package": "@axisparkjs/di",
+      "suite": "di.resolve",
+      "task": "scoped",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 12628.658,
+        "p50": 8747,
+        "p75": 9628,
+        "p99": 26109,
+        "mad": 251,
+        "rme": 6.938
+      },
+      "throughputOps": {
+        "mean": 102306.737,
+        "p50": 114324.911
+      },
+      "samples": 79185,
+      "baselineRatio": 218.675,
+      "baseline": "raw-new",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/di/di.resolve@v1/raw-new",
+      "package": "@axisparkjs/di",
+      "suite": "di.resolve",
+      "task": "raw-new",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 38.657,
+        "p50": 40,
+        "p75": 40,
+        "p99": 60,
+        "mad": 9,
+        "rme": 0.229
+      },
+      "throughputOps": {
+        "mean": 27521845.409,
+        "p50": 25000000
+      },
+      "samples": 25868362,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/engine/engine.pipeline@v1/bare",
+      "package": "@axisparkjs/engine",
+      "suite": "engine.pipeline",
+      "task": "bare",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 15716.189,
+        "p50": 11321,
+        "p75": 12503,
+        "p99": 36168.88,
+        "mad": 421,
+        "rme": 7.543
+      },
+      "throughputOps": {
+        "mean": 81687.934,
+        "p50": 88331.419
+      },
+      "samples": 63629,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/engine/engine.pipeline@v1/guarded",
+      "package": "@axisparkjs/engine",
+      "suite": "engine.pipeline",
+      "task": "guarded",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 44315.17,
+        "p50": 33473,
+        "p75": 38713,
+        "p99": 87804.7,
+        "mad": 5210,
+        "rme": 11.626
+      },
+      "throughputOps": {
+        "mean": 33655.696,
+        "p50": 29874.824
+      },
+      "samples": 22566,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/engine/engine.pipeline@v1/validated",
+      "package": "@axisparkjs/engine",
+      "suite": "engine.pipeline",
+      "task": "validated",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 47209.641,
+        "p50": 40240.5,
+        "p75": 52263,
+        "p99": 98312.8,
+        "mad": 16611,
+        "rme": 7.63
+      },
+      "throughputOps": {
+        "mean": 30476.287,
+        "p50": 24850.586
+      },
+      "samples": 21183,
+      "baselineRatio": 8.3852,
+      "baseline": "raw-validate",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/engine/engine.pipeline@v1/full",
+      "package": "@axisparkjs/engine",
+      "suite": "engine.pipeline",
+      "task": "full",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 55898.816,
+        "p50": 42970,
+        "p75": 44203,
+        "p99": 116117.1,
+        "mad": 881,
+        "rme": 6.638
+      },
+      "throughputOps": {
+        "mean": 22047.121,
+        "p50": 23272.05
+      },
+      "samples": 17891,
+      "baselineRatio": 9.5319,
+      "baseline": "raw-validate",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/engine/engine.pipeline@v1/raw-validate",
+      "package": "@axisparkjs/engine",
+      "suite": "engine.pipeline",
+      "task": "raw-validate",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 4772.441,
+        "p50": 4519,
+        "p75": 4608,
+        "p99": 8842.76,
+        "mad": 60,
+        "rme": 0.728
+      },
+      "throughputOps": {
+        "mean": 216787.443,
+        "p50": 221287.896
+      },
+      "samples": 209537,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http/http.dispatch@v1/get-10-routes",
+      "package": "@axisparkjs/http",
+      "suite": "http.dispatch",
+      "task": "get-10-routes",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 44257.62,
+        "p50": 32110,
+        "p75": 36729,
+        "p99": 91013.4,
+        "mad": 1293,
+        "rme": 7.567
+      },
+      "throughputOps": {
+        "mean": 28547.077,
+        "p50": 31142.946
+      },
+      "samples": 22662,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http/http.dispatch@v1/get-500-routes",
+      "package": "@axisparkjs/http",
+      "suite": "http.dispatch",
+      "task": "get-500-routes",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 40185.352,
+        "p50": 31389,
+        "p75": 32400,
+        "p99": 85584,
+        "mad": 642,
+        "rme": 6.676
+      },
+      "throughputOps": {
+        "mean": 30266.835,
+        "p50": 31858.294
+      },
+      "samples": 24885,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http/http.dispatch@v1/version-header",
+      "package": "@axisparkjs/http",
+      "suite": "http.dispatch",
+      "task": "version-header",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 42803.708,
+        "p50": 31579,
+        "p75": 32752,
+        "p99": 84411.8,
+        "mad": 711,
+        "rme": 7.846
+      },
+      "throughputOps": {
+        "mean": 29701.493,
+        "p50": 31666.614
+      },
+      "samples": 23432,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http/http.dispatch@v1/version-uri",
+      "package": "@axisparkjs/http",
+      "suite": "http.dispatch",
+      "task": "version-uri",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 51353.394,
+        "p50": 32861,
+        "p75": 51646.75,
+        "p99": 121857.4,
+        "mad": 1142,
+        "rme": 8.247
+      },
+      "throughputOps": {
+        "mean": 26504.285,
+        "p50": 30431.21
+      },
+      "samples": 19474,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http/http.routes@v1/table-10",
+      "package": "@axisparkjs/http",
+      "suite": "http.routes",
+      "task": "table-10",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 703193.083,
+        "p50": 586036,
+        "p75": 619394,
+        "p99": 2599703.86,
+        "mad": 35050.5,
+        "rme": 6.56
+      },
+      "throughputOps": {
+        "mean": 1655.021,
+        "p50": 1706.38
+      },
+      "samples": 1423,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http/http.routes@v1/table-500",
+      "package": "@axisparkjs/http",
+      "suite": "http.routes",
+      "task": "table-500",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 313498314.156,
+        "p50": 283159963,
+        "p75": 338134015.25,
+        "p99": 508872459.26,
+        "mad": 8751420.5,
+        "rme": 4.918
+      },
+      "throughputOps": {
+        "mean": 3.287,
+        "p50": 3.532
+      },
+      "samples": 64,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http-express/http-express.requests@v1/get",
+      "package": "@axisparkjs/http-express",
+      "suite": "http-express.requests",
+      "task": "get",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 368397.058,
+        "p50": 326791,
+        "p75": 410613.5,
+        "p99": 593195.72,
+        "mad": 39364,
+        "rme": 3.498
+      },
+      "throughputOps": {
+        "mean": 2960.666,
+        "p50": 3060.06
+      },
+      "samples": 2715,
+      "baselineRatio": 2.1924,
+      "baseline": "raw-get",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http-express/http-express.requests@v1/post",
+      "package": "@axisparkjs/http-express",
+      "suite": "http-express.requests",
+      "task": "post",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 394901.996,
+        "p50": 358251,
+        "p75": 397724,
+        "p99": 616402.48,
+        "mad": 30488,
+        "rme": 3.506
+      },
+      "throughputOps": {
+        "mean": 2697.802,
+        "p50": 2791.339
+      },
+      "samples": 2533,
+      "baselineRatio": 1.6867,
+      "baseline": "raw-post",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http-express/http-express.requests@v1/upload",
+      "package": "@axisparkjs/http-express",
+      "suite": "http-express.requests",
+      "task": "upload",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 398015.984,
+        "p50": 367719,
+        "p75": 389378,
+        "p99": 634575.8,
+        "mad": 18445,
+        "rme": 3.046
+      },
+      "throughputOps": {
+        "mean": 2637.267,
+        "p50": 2719.468
+      },
+      "samples": 2513,
+      "baselineRatio": 1.526,
+      "baseline": "raw-upload",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http-express/http-express.requests@v1/raw-get",
+      "package": "@axisparkjs/http-express",
+      "suite": "http-express.requests",
+      "task": "raw-get",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 163503.377,
+        "p50": 150762,
+        "p75": 164573,
+        "p99": 248750.04,
+        "mad": 2926,
+        "rme": 1.334
+      },
+      "throughputOps": {
+        "mean": 6269.818,
+        "p50": 6632.971
+      },
+      "samples": 6117,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http-express/http-express.requests@v1/raw-post",
+      "package": "@axisparkjs/http-express",
+      "suite": "http-express.requests",
+      "task": "raw-post",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 234646.167,
+        "p50": 213128.5,
+        "p75": 245329,
+        "p99": 372284.5,
+        "mad": 9327,
+        "rme": 0.72
+      },
+      "throughputOps": {
+        "mean": 4385.474,
+        "p50": 4692.005
+      },
+      "samples": 4262,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http-express/http-express.requests@v1/raw-upload",
+      "package": "@axisparkjs/http-express",
+      "suite": "http-express.requests",
+      "task": "raw-upload",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 255758.105,
+        "p50": 239328,
+        "p75": 279247,
+        "p99": 389076.2,
+        "mad": 25302,
+        "rme": 1.543
+      },
+      "throughputOps": {
+        "mean": 4059.328,
+        "p50": 4178.366
+      },
+      "samples": 3910,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http-fastify/http-fastify.requests@v1/get",
+      "package": "@axisparkjs/http-fastify",
+      "suite": "http-fastify.requests",
+      "task": "get",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 283326.894,
+        "p50": 253069,
+        "p75": 287135.5,
+        "p99": 486776.98,
+        "mad": 22477.5,
+        "rme": 3.668
+      },
+      "throughputOps": {
+        "mean": 3803.406,
+        "p50": 3951.492
+      },
+      "samples": 3530,
+      "baselineRatio": 1.9565,
+      "baseline": "raw-get",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http-fastify/http-fastify.requests@v1/post",
+      "package": "@axisparkjs/http-fastify",
+      "suite": "http-fastify.requests",
+      "task": "post",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 346114.363,
+        "p50": 307591,
+        "p75": 338766.25,
+        "p99": 565490.63,
+        "mad": 16912,
+        "rme": 3.718
+      },
+      "throughputOps": {
+        "mean": 3098.604,
+        "p50": 3251.07
+      },
+      "samples": 2890,
+      "baselineRatio": 1.4188,
+      "baseline": "raw-post",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http-fastify/http-fastify.requests@v1/upload",
+      "package": "@axisparkjs/http-fastify",
+      "suite": "http-fastify.requests",
+      "task": "upload",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 408717.307,
+        "p50": 362759,
+        "p75": 391773,
+        "p99": 626192.3,
+        "mad": 22793,
+        "rme": 4.192
+      },
+      "throughputOps": {
+        "mean": 2650.129,
+        "p50": 2756.651
+      },
+      "samples": 2448,
+      "baselineRatio": 1.6077,
+      "baseline": "raw-upload",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http-fastify/http-fastify.requests@v1/raw-get",
+      "package": "@axisparkjs/http-fastify",
+      "suite": "http-fastify.requests",
+      "task": "raw-get",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 152428.386,
+        "p50": 127518,
+        "p75": 178133,
+        "p99": 247436.4,
+        "mad": 16881,
+        "rme": 3.254
+      },
+      "throughputOps": {
+        "mean": 7216.269,
+        "p50": 7842.03
+      },
+      "samples": 6561,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http-fastify/http-fastify.requests@v1/raw-post",
+      "package": "@axisparkjs/http-fastify",
+      "suite": "http-fastify.requests",
+      "task": "raw-post",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 224419.319,
+        "p50": 211681,
+        "p75": 258047.25,
+        "p99": 367564.18,
+        "mad": 33022,
+        "rme": 1.213
+      },
+      "throughputOps": {
+        "mean": 4803.022,
+        "p50": 4724.09
+      },
+      "samples": 4456,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/http-fastify/http-fastify.requests@v1/raw-upload",
+      "package": "@axisparkjs/http-fastify",
+      "suite": "http-fastify.requests",
+      "task": "raw-upload",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 255049.447,
+        "p50": 225622,
+        "p75": 262602,
+        "p99": 407979.6,
+        "mad": 14487,
+        "rme": 2.221
+      },
+      "throughputOps": {
+        "mean": 4140.522,
+        "p50": 4432.192
+      },
+      "samples": 3921,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/kafka/kafka.messages@v1/produce",
+      "package": "@axisparkjs/kafka",
+      "suite": "kafka.messages",
+      "task": "produce",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 812464.622,
+        "p50": 693324,
+        "p75": 885303,
+        "p99": 2666711.2,
+        "mad": 139772,
+        "rme": 3.091
+      },
+      "throughputOps": {
+        "mean": 1422.587,
+        "p50": 1442.327
+      },
+      "samples": 1231,
+      "baselineRatio": 1.219,
+      "baseline": "raw-produce",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/kafka/kafka.messages@v1/produce-consume",
+      "package": "@axisparkjs/kafka",
+      "suite": "kafka.messages",
+      "task": "produce-consume",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 1159265.484,
+        "p50": 1088326,
+        "p75": 1223383.5,
+        "p99": 2474015.92,
+        "mad": 101834,
+        "rme": 1.632
+      },
+      "throughputOps": {
+        "mean": 895.808,
+        "p50": 918.842
+      },
+      "samples": 863,
+      "baselineRatio": 0.9918,
+      "baseline": "raw-produce-consume",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/kafka/kafka.messages@v1/raw-produce",
+      "package": "@axisparkjs/kafka",
+      "suite": "kafka.messages",
+      "task": "raw-produce",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 579176.321,
+        "p50": 507860,
+        "p75": 613167,
+        "p99": 1595665.38,
+        "mad": 81222,
+        "rme": 3.539
+      },
+      "throughputOps": {
+        "mean": 1925.737,
+        "p50": 1969.047
+      },
+      "samples": 1727,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/kafka/kafka.messages@v1/raw-produce-consume",
+      "package": "@axisparkjs/kafka",
+      "suite": "kafka.messages",
+      "task": "raw-produce-consume",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 1308420.798,
+        "p50": 1097332.5,
+        "p75": 1491386.75,
+        "p99": 3809127.7,
+        "mad": 181695.5,
+        "rme": 3.227
+      },
+      "throughputOps": {
+        "mean": 857.854,
+        "p50": 911.301
+      },
+      "samples": 766,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/logger/logger.write@v1/filtered",
+      "package": "@axisparkjs/logger",
+      "suite": "logger.write",
+      "task": "filtered",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 7003.797,
+        "p50": 5871,
+        "p75": 6953,
+        "p99": 14399.1,
+        "mad": 1382,
+        "rme": 9.405
+      },
+      "throughputOps": {
+        "mean": 211746.698,
+        "p50": 170328.734
+      },
+      "samples": 142780,
+      "baselineRatio": 10.5531,
+      "baseline": "raw-console",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/logger/logger.write@v1/simple",
+      "package": "@axisparkjs/logger",
+      "suite": "logger.write",
+      "task": "simple",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 6878.534,
+        "p50": 4819,
+        "p75": 5340,
+        "p99": 15531.1,
+        "mad": 170,
+        "rme": 6.799
+      },
+      "throughputOps": {
+        "mean": 185963.401,
+        "p50": 207511.932
+      },
+      "samples": 145380,
+      "baselineRatio": 14.6698,
+      "baseline": "raw-console",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/logger/logger.write@v1/simple-metadata",
+      "package": "@axisparkjs/logger",
+      "suite": "logger.write",
+      "task": "simple-metadata",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 6372.973,
+        "p50": 4769,
+        "p75": 4950,
+        "p99": 14056,
+        "mad": 120,
+        "rme": 6.196
+      },
+      "throughputOps": {
+        "mean": 196817.371,
+        "p50": 209687.566
+      },
+      "samples": 156913,
+      "baselineRatio": 14.6386,
+      "baseline": "raw-console",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/logger/logger.write@v1/json",
+      "package": "@axisparkjs/logger",
+      "suite": "logger.write",
+      "task": "json",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 6285.305,
+        "p50": 5139,
+        "p75": 5310,
+        "p99": 13124,
+        "mad": 121,
+        "rme": 5.348
+      },
+      "throughputOps": {
+        "mean": 187394.104,
+        "p50": 194590.387
+      },
+      "samples": 159102,
+      "baselineRatio": 15.8255,
+      "baseline": "raw-console",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/logger/logger.write@v1/child",
+      "package": "@axisparkjs/logger",
+      "suite": "logger.write",
+      "task": "child",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 6112.45,
+        "p50": 4819,
+        "p75": 4970,
+        "p99": 12421.29,
+        "mad": 111,
+        "rme": 5.954
+      },
+      "throughputOps": {
+        "mean": 199116.22,
+        "p50": 207511.932
+      },
+      "samples": 163601,
+      "baselineRatio": 14.8879,
+      "baseline": "raw-console",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/logger/logger.write@v1/transports-3",
+      "package": "@axisparkjs/logger",
+      "suite": "logger.write",
+      "task": "transports-3",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 12064.083,
+        "p50": 9589,
+        "p75": 9868,
+        "p99": 26730,
+        "mad": 190,
+        "rme": 6.028
+      },
+      "throughputOps": {
+        "mean": 98087.829,
+        "p50": 104286.161
+      },
+      "samples": 82891,
+      "baselineRatio": 29.9656,
+      "baseline": "raw-console",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/logger/logger.write@v1/raw-console",
+      "package": "@axisparkjs/logger",
+      "suite": "logger.write",
+      "task": "raw-console",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 474.524,
+        "p50": 321,
+        "p75": 591,
+        "p99": 891,
+        "mad": 20,
+        "rme": 3.053
+      },
+      "throughputOps": {
+        "mean": 2530988.91,
+        "p50": 3115264.798
+      },
+      "samples": 2107375,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/openapi/openapi.document@v1/generate-10",
+      "package": "@axisparkjs/openapi",
+      "suite": "openapi.document",
+      "task": "generate-10",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 23946.867,
+        "p50": 21911,
+        "p75": 22282,
+        "p99": 52171.69,
+        "mad": 270,
+        "rme": 0.686
+      },
+      "throughputOps": {
+        "mean": 43744.018,
+        "p50": 45639.177
+      },
+      "samples": 41760,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/openapi/openapi.document@v1/generate-500",
+      "package": "@axisparkjs/openapi",
+      "suite": "openapi.document",
+      "task": "generate-500",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 1185238.764,
+        "p50": 1116348.5,
+        "p75": 1155094.5,
+        "p99": 2144787.58,
+        "mad": 20328,
+        "rme": 1.125
+      },
+      "throughputOps": {
+        "mean": 859.465,
+        "p50": 895.778
+      },
+      "samples": 844,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/openapi/openapi.document@v1/json-500",
+      "package": "@axisparkjs/openapi",
+      "suite": "openapi.document",
+      "task": "json-500",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 2140326.186,
+        "p50": 1989802,
+        "p75": 2038801.25,
+        "p99": 3883917.37,
+        "mad": 35307,
+        "rme": 2.109
+      },
+      "throughputOps": {
+        "mean": 480.075,
+        "p50": 502.563
+      },
+      "samples": 468,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/openapi/openapi.document@v1/yaml-500",
+      "package": "@axisparkjs/openapi",
+      "suite": "openapi.document",
+      "task": "yaml-500",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 31798425.688,
+        "p50": 30374280,
+        "p75": 38311121.75,
+        "p99": 54018663.36,
+        "mad": 6934848,
+        "rme": 7.477
+      },
+      "throughputOps": {
+        "mean": 33.898,
+        "p50": 32.924
+      },
+      "samples": 64,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/rabbitmq/rabbitmq.messages@v1/publish-consume",
+      "package": "@axisparkjs/rabbitmq",
+      "suite": "rabbitmq.messages",
+      "task": "publish-consume",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 373219.063,
+        "p50": 361016,
+        "p75": 387480.25,
+        "p99": 771748.48,
+        "mad": 29242,
+        "rme": 1.367
+      },
+      "throughputOps": {
+        "mean": 2793.425,
+        "p50": 2769.96
+      },
+      "samples": 2680,
+      "baselineRatio": 1.237,
+      "baseline": "raw-publish-consume",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/rabbitmq/rabbitmq.messages@v1/raw-publish-consume",
+      "package": "@axisparkjs/rabbitmq",
+      "suite": "rabbitmq.messages",
+      "task": "raw-publish-consume",
+      "tier": "infra",
+      "latencyNs": {
+        "mean": 307174.189,
+        "p50": 295580,
+        "p75": 318838.75,
+        "p99": 509394.85,
+        "mad": 20235.5,
+        "rme": 0.879
+      },
+      "throughputOps": {
+        "mean": 3336.481,
+        "p50": 3383.179
+      },
+      "samples": 3256,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/schedule/schedule.jobs@v1/register-start-100",
+      "package": "@axisparkjs/schedule",
+      "suite": "schedule.jobs",
+      "task": "register-start-100",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 831390.34,
+        "p50": 611715,
+        "p75": 701062,
+        "p99": 9213441.42,
+        "mad": 59061,
+        "rme": 8.004
+      },
+      "throughputOps": {
+        "mean": 1526.321,
+        "p50": 1634.748
+      },
+      "samples": 1203,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/schedule/schedule.jobs@v1/tick",
+      "package": "@axisparkjs/schedule",
+      "suite": "schedule.jobs",
+      "task": "tick",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 88923.224,
+        "p50": 78467,
+        "p75": 86061,
+        "p99": 194925.15,
+        "mad": 4528,
+        "rme": 2.236
+      },
+      "throughputOps": {
+        "mean": 12087.959,
+        "p50": 12744.211
+      },
+      "samples": 11246,
+      "baselineRatio": 1.3459,
+      "baseline": "raw-cron-tick",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/schedule/schedule.jobs@v1/raw-cron-tick",
+      "package": "@axisparkjs/schedule",
+      "suite": "schedule.jobs",
+      "task": "raw-cron-tick",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 65278.639,
+        "p50": 57502.5,
+        "p75": 59140,
+        "p99": 152514.1,
+        "mad": 781,
+        "rme": 0.616
+      },
+      "throughputOps": {
+        "mean": 16340.66,
+        "p50": 17390.548
+      },
+      "samples": 15320,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/security/security.pipeline@v1/public",
+      "package": "@axisparkjs/security",
+      "suite": "security.pipeline",
+      "task": "public",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 118471.463,
+        "p50": 80261,
+        "p75": 116638,
+        "p99": 228405,
+        "mad": 8596,
+        "rme": 8.631
+      },
+      "throughputOps": {
+        "mean": 11011.019,
+        "p50": 12459.351
+      },
+      "samples": 8441,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/security/security.pipeline@v1/authenticated",
+      "package": "@axisparkjs/security",
+      "suite": "security.pipeline",
+      "task": "authenticated",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 98359.858,
+        "p50": 70612,
+        "p75": 79864,
+        "p99": 199316.54,
+        "mad": 2184,
+        "rme": 8.098
+      },
+      "throughputOps": {
+        "mean": 12944.19,
+        "p50": 14161.899
+      },
+      "samples": 10167,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/security/security.pipeline@v1/policies-2",
+      "package": "@axisparkjs/security",
+      "suite": "security.pipeline",
+      "task": "policies-2",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 117482.157,
+        "p50": 79338,
+        "p75": 124804,
+        "p99": 217580.2,
+        "mad": 5330,
+        "rme": 8.463
+      },
+      "throughputOps": {
+        "mean": 10999.487,
+        "p50": 12604.301
+      },
+      "samples": 8529,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/security/security.pipeline@v1/rejected",
+      "package": "@axisparkjs/security",
+      "suite": "security.pipeline",
+      "task": "rejected",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 142945.771,
+        "p50": 108243,
+        "p75": 125937.75,
+        "p99": 264030.05,
+        "mad": 3387,
+        "rme": 7.556
+      },
+      "throughputOps": {
+        "mean": 8444.001,
+        "p50": 9238.473
+      },
+      "samples": 6996,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/test/test.factory@v1/create-10",
+      "package": "@axisparkjs/test",
+      "suite": "test.factory",
+      "task": "create-10",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 1670.353,
+        "p50": 1563,
+        "p75": 1593,
+        "p99": 3517,
+        "mad": 20,
+        "rme": 0.497
+      },
+      "throughputOps": {
+        "mean": 622599.282,
+        "p50": 639795.266
+      },
+      "samples": 598676,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/test/test.factory@v1/create-init-get-10",
+      "package": "@axisparkjs/test",
+      "suite": "test.factory",
+      "task": "create-init-get-10",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 327886.84,
+        "p50": 257872,
+        "p75": 320396.75,
+        "p99": 1015461.15,
+        "mad": 32661,
+        "rme": 7.046
+      },
+      "throughputOps": {
+        "mean": 3695.138,
+        "p50": 3877.893
+      },
+      "samples": 3050,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/websocket/websocket.dispatch@v1/message",
+      "package": "@axisparkjs/websocket",
+      "suite": "websocket.dispatch",
+      "task": "message",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 25765.381,
+        "p50": 16811,
+        "p75": 27020,
+        "p99": 57644.7,
+        "mad": 2153,
+        "rme": 8.447
+      },
+      "throughputOps": {
+        "mean": 53709.145,
+        "p50": 59484.861
+      },
+      "samples": 38812,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/websocket/websocket.dispatch@v1/explicit-ack",
+      "package": "@axisparkjs/websocket",
+      "suite": "websocket.dispatch",
+      "task": "explicit-ack",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 25326.718,
+        "p50": 14808,
+        "p75": 27644.25,
+        "p99": 59900.5,
+        "mad": 572,
+        "rme": 9.162
+      },
+      "throughputOps": {
+        "mean": 56760.095,
+        "p50": 67531.064
+      },
+      "samples": 39484,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/websocket/websocket.dispatch@v1/regex-event",
+      "package": "@axisparkjs/websocket",
+      "suite": "websocket.dispatch",
+      "task": "regex-event",
+      "tier": "micro",
+      "latencyNs": {
+        "mean": 25762.711,
+        "p50": 15209,
+        "p75": 28754,
+        "p99": 57483.35,
+        "mad": 751,
+        "rme": 8.342
+      },
+      "throughputOps": {
+        "mean": 54218.83,
+        "p50": 65750.542
+      },
+      "samples": 38816,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/websocket-socketio/websocket-socketio.roundtrip@v1/roundtrip",
+      "package": "@axisparkjs/websocket-socketio",
+      "suite": "websocket-socketio.roundtrip",
+      "task": "roundtrip",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 150875.554,
+        "p50": 139190,
+        "p75": 152487.5,
+        "p99": 280798.06,
+        "mad": 15178.5,
+        "rme": 1.869
+      },
+      "throughputOps": {
+        "mean": 7054.7,
+        "p50": 7184.424
+      },
+      "samples": 6628,
+      "baselineRatio": 2.0879,
+      "baseline": "raw-roundtrip",
+      "heapBytes": null
+    },
+    {
+      "id": "@axisparkjs/websocket-socketio/websocket-socketio.roundtrip@v1/raw-roundtrip",
+      "package": "@axisparkjs/websocket-socketio",
+      "suite": "websocket-socketio.roundtrip",
+      "task": "raw-roundtrip",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 76489.439,
+        "p50": 68057,
+        "p75": 72686,
+        "p99": 146129.17,
+        "mad": 1482,
+        "rme": 0.725
+      },
+      "throughputOps": {
+        "mean": 13670.031,
+        "p50": 14693.566
+      },
+      "samples": 13074,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "scenarios/app.hello-world@v1/lifecycle",
+      "package": "scenarios",
+      "suite": "app.hello-world",
+      "task": "lifecycle",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 99497.161,
+        "p50": 62988,
+        "p75": 95483.5,
+        "p99": 229534.5,
+        "mad": 9257,
+        "rme": 8.161
+      },
+      "throughputOps": {
+        "mean": 13794.696,
+        "p50": 15876.04
+      },
+      "samples": 10051,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": 10696
+    },
+    {
+      "id": "scenarios/app.todo-crud@v1/express-list",
+      "package": "scenarios",
+      "suite": "app.todo-crud",
+      "task": "express-list",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 310418.982,
+        "p50": 272464.5,
+        "p75": 319935.5,
+        "p99": 512173.86,
+        "mad": 27195.5,
+        "rme": 3.429
+      },
+      "throughputOps": {
+        "mean": 3482.952,
+        "p50": 3670.203
+      },
+      "samples": 3222,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "scenarios/app.todo-crud@v1/express-get",
+      "package": "scenarios",
+      "suite": "app.todo-crud",
+      "task": "express-get",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 346351.172,
+        "p50": 286942,
+        "p75": 363250,
+        "p99": 545165.68,
+        "mad": 31824.5,
+        "rme": 3.984
+      },
+      "throughputOps": {
+        "mean": 3301.058,
+        "p50": 3485.025
+      },
+      "samples": 2888,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "scenarios/app.todo-crud@v1/express-update",
+      "package": "scenarios",
+      "suite": "app.todo-crud",
+      "task": "express-update",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 379010.243,
+        "p50": 362959,
+        "p75": 407177,
+        "p99": 610135.2,
+        "mad": 47439,
+        "rme": 4.108
+      },
+      "throughputOps": {
+        "mean": 2833.558,
+        "p50": 2755.132
+      },
+      "samples": 2639,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "scenarios/app.todo-crud@v1/fastify-list",
+      "package": "scenarios",
+      "suite": "app.todo-crud",
+      "task": "fastify-list",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 240992.418,
+        "p50": 212898,
+        "p75": 254566.75,
+        "p99": 384993.4,
+        "mad": 20718.5,
+        "rme": 3.786
+      },
+      "throughputOps": {
+        "mean": 4483.699,
+        "p50": 4697.085
+      },
+      "samples": 4150,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "scenarios/app.todo-crud@v1/fastify-get",
+      "package": "scenarios",
+      "suite": "app.todo-crud",
+      "task": "fastify-get",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 224759.842,
+        "p50": 199382.5,
+        "p75": 223568,
+        "p99": 357251.62,
+        "mad": 6993,
+        "rme": 3.602
+      },
+      "throughputOps": {
+        "mean": 4743.802,
+        "p50": 5015.485
+      },
+      "samples": 4450,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "scenarios/app.todo-crud@v1/fastify-update",
+      "package": "scenarios",
+      "suite": "app.todo-crud",
+      "task": "fastify-update",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 245040.843,
+        "p50": 221555,
+        "p75": 242661.5,
+        "p99": 407161.4,
+        "mad": 8496.5,
+        "rme": 3.503
+      },
+      "throughputOps": {
+        "mean": 4336.423,
+        "p50": 4513.552
+      },
+      "samples": 4081,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "scenarios/boot.empty@v1/create-init-destroy",
+      "package": "scenarios",
+      "suite": "boot.empty",
+      "task": "create-init-destroy",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 260825.339,
+        "p50": 223928,
+        "p75": 267801,
+        "p99": 605127.42,
+        "mad": 30456,
+        "rme": 3.921
+      },
+      "throughputOps": {
+        "mean": 4350.349,
+        "p50": 4465.721
+      },
+      "samples": 3835,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": 26672
+    },
+    {
+      "id": "scenarios/boot.plugins@v1/n10",
+      "package": "scenarios",
+      "suite": "boot.plugins",
+      "task": "n10",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 172176.586,
+        "p50": 124718,
+        "p75": 151269.75,
+        "p99": 350131.7,
+        "mad": 8977,
+        "rme": 7.594
+      },
+      "throughputOps": {
+        "mean": 7293.436,
+        "p50": 8018.089
+      },
+      "samples": 5808,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": 15416
+    },
+    {
+      "id": "scenarios/boot.plugins@v1/n100",
+      "package": "scenarios",
+      "suite": "boot.plugins",
+      "task": "n100",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 1210851.755,
+        "p50": 1023985,
+        "p75": 1075864.25,
+        "p99": 10040596.54,
+        "mad": 48449.5,
+        "rme": 6.951
+      },
+      "throughputOps": {
+        "mean": 946.176,
+        "p50": 976.577
+      },
+      "samples": 826,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": 45784
+    },
+    {
+      "id": "scenarios/boot.plugins@v1/n500",
+      "package": "scenarios",
+      "suite": "boot.plugins",
+      "task": "n500",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 7822793.141,
+        "p50": 6490086,
+        "p75": 7729748.25,
+        "p99": 22708601.23,
+        "mad": 709492.5,
+        "rme": 8.054
+      },
+      "throughputOps": {
+        "mean": 143.266,
+        "p50": 154.082
+      },
+      "samples": 128,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": 132656
+    },
+    {
+      "id": "scenarios/boot.scan@v1/cold-0",
+      "package": "scenarios",
+      "suite": "boot.scan",
+      "task": "cold-0",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 99936356.25,
+        "p50": 91172509.5,
+        "p75": 104210352.75,
+        "p99": 151044203.08,
+        "mad": 3427898,
+        "rme": 4.413
+      },
+      "throughputOps": {
+        "mean": 10.254,
+        "p50": 10.968
+      },
+      "samples": 64,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "scenarios/boot.scan@v1/cold-50",
+      "package": "scenarios",
+      "suite": "boot.scan",
+      "task": "cold-50",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 111845436.703,
+        "p50": 103484214.5,
+        "p75": 119089211.5,
+        "p99": 159115272.09,
+        "mad": 4081761,
+        "rme": 3.838
+      },
+      "throughputOps": {
+        "mean": 9.073,
+        "p50": 9.663
+      },
+      "samples": 64,
+      "baselineRatio": 1.135,
+      "baseline": "cold-0",
+      "heapBytes": null
+    },
+    {
+      "id": "scenarios/boot.scan@v1/cold-500",
+      "package": "scenarios",
+      "suite": "boot.scan",
+      "task": "cold-500",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 197963942.016,
+        "p50": 185372532,
+        "p75": 212612908.25,
+        "p99": 279915863.85,
+        "mad": 6661732,
+        "rme": 3.624
+      },
+      "throughputOps": {
+        "mean": 5.12,
+        "p50": 5.395
+      },
+      "samples": 64,
+      "baselineRatio": 2.0332,
+      "baseline": "cold-0",
+      "heapBytes": null
+    },
+    {
+      "id": "scenarios/boot.scan@v1/warm-50",
+      "package": "scenarios",
+      "suite": "boot.scan",
+      "task": "warm-50",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 2498190.678,
+        "p50": 2167725,
+        "p75": 2734305.5,
+        "p99": 7744337,
+        "mad": 506383,
+        "rme": 5.373
+      },
+      "throughputOps": {
+        "mean": 465.505,
+        "p50": 461.313
+      },
+      "samples": 401,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    },
+    {
+      "id": "scenarios/boot.scan@v1/warm-500",
+      "package": "scenarios",
+      "suite": "boot.scan",
+      "task": "warm-500",
+      "tier": "app",
+      "latencyNs": {
+        "mean": 7473081.119,
+        "p50": 6628355,
+        "p75": 8289305,
+        "p99": 19138931.27,
+        "mad": 1080661,
+        "rme": 6.317
+      },
+      "throughputOps": {
+        "mean": 145.337,
+        "p50": 150.868
+      },
+      "samples": 134,
+      "baselineRatio": null,
+      "baseline": null,
+      "heapBytes": null
+    }
+  ],
+  "errors": [
+    {
+      "suite": "core.health",
+      "message": "Cannot be loaded: Class extends value undefined is not a constructor or null"
+    }
+  ]
+}
