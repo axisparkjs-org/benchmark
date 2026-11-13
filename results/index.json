@@ -1,7 +1,26 @@
 {
   "schema": 1,
-  "updatedAt": null,
-  "releases": [],
-  "environments": [],
-  "results": []
+  "updatedAt": "2026-11-13T11-57-01Z",
+  "releases": [
+    "1.5.1"
+  ],
+  "environments": [
+    {
+      "fingerprint": "gh-ubuntu-24.04-4cpu",
+      "node": [
+        24
+      ]
+    }
+  ],
+  "results": [
+    {
+      "version": "1.5.1",
+      "node": 24,
+      "fingerprint": "gh-ubuntu-24.04-4cpu",
+      "kind": "release",
+      "runId": "2026-11-13T11-57-01Z",
+      "file": "1.5.1/node-24.json",
+      "tasks": 127
+    }
+  ]
 }
