@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Check the coverage of the published packages
+        run: node dist/runner/coverage.js
+
+      - name: Check the results database
+        run: |
+          node dist/runner/results-index.js
+          git diff --exit-code results/index.json || { echo "::error::results/index.json is not up to date"; exit 1; }
+
+      # A short run of the suites without services: they still work. Never saved.
+      - name: Smoke run
+        run: node --expose-gc dist/runner/run.js --quick --tier micro,app --strict

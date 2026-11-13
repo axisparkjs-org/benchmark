@@ -1,0 +1,4 @@
+node_modules
+dist
+# Snapshots and quick runs (see runner/run.ts): never committed.
+out

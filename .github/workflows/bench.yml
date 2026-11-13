@@ -1,0 +1,148 @@
+name: Benchmarks
+
+on:
+  # Sent by the CD of axispark when a version is published in `pro`.
+  # client_payload: `version` (released version, e.g. 1.5.1) and `ref` (release commit of axispark).
+  repository_dispatch:
+    types: [axispark-release]
+  # Backfill of old releases, repetitions and snapshots.
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version of the @axisparkjs packages to measure (e.g. 1.5.1)"
+        required: true
+        type: string
+      kind:
+        description: "Kind of run: release and backfill are saved in results/, snapshot is only uploaded as an artifact"
+        required: true
+        type: choice
+        options:
+          - backfill
+          - release
+          - snapshot
+        default: backfill
+      ref:
+        description: "Release commit of axispark (optional)"
+        required: false
+        type: string
+      tier:
+        description: "Only these tiers (micro,app,infra). Empty: all"
+        required: false
+        type: string
+
+# One run at a time: the runs commit to `results/`.
+concurrency:
+  group: benchmarks
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  VERSION: ${{ github.event.client_payload.version || inputs.version }}
+  KIND: ${{ github.event_name == 'repository_dispatch' && 'release' || inputs.kind }}
+  AXISPARK_SHA: ${{ github.event.client_payload.ref || inputs.ref }}
+  WEBSITE_REPO: axisparkjs-org/website
+  # The benchmarks are measured with the Active LTS version of Node.js.
+  NODE_VERSION: 24
+
+jobs:
+  bench:
+    name: Node.js 24
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+
+    steps:
+      # 1. Benchmarks at the latest `main`, with the results already committed.
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Check the version
+        run: |
+          if ! echo "$VERSION" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$'; then
+            echo "::error::Invalid version '$VERSION'"
+            exit 1
+          fi
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      # 2. The suites are compiled with the packages of package.json. An old release may not have every package or
+      #    every API: compiled first, those suites are skipped at runtime instead of breaking the build.
+      - name: Build the suites
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+
+      # 3. The published packages of the version, from npm, like a user installs them. The packages that do not exist
+      #    in that version are removed.
+      - name: Install the released packages
+        run: |
+          node scripts/set-version.mjs "$VERSION"
+          npm install --no-audit --no-fund
+
+      # 4. Services of the infra tier.
+      - name: Start the services
+        if: inputs.tier == '' || contains(inputs.tier, 'infra')
+        run: docker compose up -d --wait
+
+      # 5. Every suite 3 times, each one in a new process. A suite that fails is written in `errors` of the result and
+      #    the others go on.
+      - name: Run the benchmarks
+        id: run
+        run: |
+          ARGS=(--kind "$KIND")
+          [ -n "$AXISPARK_SHA" ] && ARGS+=(--sha "$AXISPARK_SHA")
+          [ -n "${{ inputs.tier }}" ] && ARGS+=(--tier "${{ inputs.tier }}")
+          [ "$KIND" = "snapshot" ] && ARGS+=(--out "out/${VERSION}-node-${NODE_VERSION}.json")
+          node --expose-gc dist/runner/run.js "${ARGS[@]}"
+
+      - name: Upload the result
+        uses: actions/upload-artifact@v7
+        with:
+          name: result-${{ env.VERSION }}-node-${{ env.NODE_VERSION }}
+          path: ${{ steps.run.outputs.result }}
+          retention-days: 90
+
+      # 6. The result is immutable: it is committed once and never rewritten.
+      - name: Commit the result
+        if: env.KIND != 'snapshot'
+        run: |
+          # package.json and package-lock.json were changed by the installation of the release.
+          git checkout -- package.json package-lock.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            # The index is regenerated after the pull, with the results of the other runs.
+            git checkout -- results/index.json 2>/dev/null || true
+            git pull --rebase origin main
+            node dist/runner/results-index.js
+            git add results
+            git diff --cached --quiet && { echo "Nothing to commit"; exit 0; }
+            git commit -m "results: AxiSpark.js ${VERSION} on Node.js ${NODE_VERSION} (${KIND})"
+            git push origin HEAD:main && exit 0
+            git reset --soft HEAD~1
+          done
+          exit 1
+
+      - name: Stop the services
+        if: always()
+        run: docker compose down -v || true
+
+  # The website regenerates /benchmarks from results/ and deploys, without a new version of the documentation.
+  notify:
+    name: Notify the website
+    needs: bench
+    if: always() && needs.bench.result != 'cancelled' && (github.event_name == 'repository_dispatch' || inputs.kind != 'snapshot')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch benchmarks-updated
+        env:
+          GH_TOKEN: ${{ secrets.WEBSITE_REPO_TOKEN }}
+        run: |
+          gh api repos/axisparkjs-org/website/dispatches \ 
+            --method POST \
+            -f event_type=benchmarks-updated \
+            -f "client_payload[version]=$VERSION"

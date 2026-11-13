@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es2023",
+        "lib": ["ES2023"],
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "strict": true,
+        "strictPropertyInitialization": false,
+        "noUnusedLocals": true,
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "sourceMap": false,
+        "rootDir": ".",
+        "outDir": "dist",
+        "types": ["node"]
+    },
+    "include": ["../benchmark/bench.config.ts", "runner/**/*.ts", "suites/**/*.ts", "fixtures/**/*.ts"],
+    "exclude": ["node_modules", "dist", "results"]
+}
