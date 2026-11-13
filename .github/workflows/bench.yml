@@ -47,15 +47,17 @@ env:
   NODE_VERSION: 24
 
 jobs:
-  bench:
-    name: Node.js 24
-    runs-on: ubuntu-24.04
-    timeout-minutes: 120
-
+  # The results are immutable: a version already measured with this Node.js version is not measured again.
+  check:
+    name: Check the result
+    runs-on: ubuntu-latest
+    outputs:
+      skip: ${{ steps.existing.outputs.skip }}
     steps:
-      # 1. Benchmarks at the latest `main`, with the results already committed.
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          sparse-checkout: results
 
       - name: Check the version
         run: |
@@ -63,6 +65,31 @@ jobs:
             echo "::error::Invalid version '$VERSION'"
             exit 1
           fi
+
+      # `node-<major>.json`, or `node-<major>@<fingerprint>.json` when it was measured again in another machine. The
+      # snapshots are never saved in results/: they always run.
+      - name: Look for an existing result
+        id: existing
+        run: |
+          FILES=$(ls results/"$VERSION"/node-"$NODE_VERSION".json results/"$VERSION"/node-"$NODE_VERSION"@*.json 2>/dev/null || true)
+          if [ "$KIND" != "snapshot" ] && [ -n "$FILES" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::AxiSpark.js ${VERSION} is already measured with Node.js ${NODE_VERSION} ($(echo $FILES)): skipped"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  bench:
+    name: Node.js 24
+    needs: check
+    if: needs.check.outputs.skip != 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+
+    steps:
+      # 1. Benchmarks at the latest `main`, with the results already committed.
+      - name: Checkout
+        uses: actions/checkout@v7
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -134,8 +161,8 @@ jobs:
   # The website regenerates /benchmarks from results/ and deploys, without a new version of the documentation.
   notify:
     name: Notify the website
-    needs: bench
-    if: always() && needs.bench.result != 'cancelled' && (github.event_name == 'repository_dispatch' || inputs.kind != 'snapshot')
+    needs: [check, bench]
+    if: always() && needs.check.result == 'success' && needs.bench.result != 'cancelled' && (github.event_name == 'repository_dispatch' || inputs.kind != 'snapshot')
     runs-on: ubuntu-latest
     steps:
       - name: Dispatch benchmarks-updated
