@@ -1,7 +1,8 @@
 {
   "schema": 1,
-  "updatedAt": "2026-11-13T19-02-01Z",
+  "updatedAt": "2026-11-14T21-40-13Z",
   "releases": [
+    "1.6.0",
     "1.5.1",
     "1.5.0",
     "1.4.0",
@@ -20,6 +21,15 @@
     }
   ],
   "results": [
+    {
+      "version": "1.6.0",
+      "node": 24,
+      "fingerprint": "gh-ubuntu-24.04-4cpu",
+      "kind": "release",
+      "runId": "2026-11-14T21-40-13Z",
+      "file": "1.6.0/node-24.json",
+      "tasks": 127
+    },
     {
       "version": "1.5.1",
       "node": 24,
