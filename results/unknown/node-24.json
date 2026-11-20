@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "axispark": {
+    "version": "unknown",
+    "tag": "vunknown",
+    "sha": "3105417e8d14c35452dc188463c77614c75e9e6b"
+  },
+  "run": {
+    "id": "2026-11-20T16-42-14Z",
+    "benchSha": "e60e437ec09a2e8dcc50fb2e24089679227c4762",
+    "kind": "release",
+    "configVersion": 1,
+    "repetitions": 3
+  },
+  "env": {
+    "fingerprint": "gh-ubuntu-24.04-4cpu",
+    "node": "24.22.3",
+    "v8": "13.6.233.17-node.63",
+    "os": "linux 7.0.0-1014-aws",
+    "cpu": "Intel(R) Xeon(R) 6975P-C",
+    "cores": 4,
+    "memoryGb": 15,
+    "tinybench": "6.2.3",
+    "lockfileHash": "a433b70f55960636685e434548a809a875336d6f287a51d030d43fb40a9bc246"
+  },
+  "tasks": []
+}
